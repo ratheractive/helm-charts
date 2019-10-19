@@ -37,6 +37,22 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          envs:
+            - name: DRONE_URL
+              value: {{ .Values.giteadrone.drone_url }}
+            - name: DRONE_TOKEN
+              value: {{ .Values.giteadrone.drone_token }}
+          {{- with .Values.extraVolumeMounts }}
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.extraEnvs }}
+          volumeMounts:
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.extraVolumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

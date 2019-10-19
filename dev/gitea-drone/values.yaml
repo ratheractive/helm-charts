@@ -12,7 +12,7 @@ image:
 nameOverride: ""
 fullnameOverride: ""
 
-giteadrone:
+gitea_drone:
   drone_url: 
   drone_token:
 
@@ -51,3 +51,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+extraEnvs: {}
+extraVolumes: {}
+extraVolumeMounts: {}

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "gitea.fullname" . }}-ssh
+  labels:
+    app: {{ template "gitea.fullname" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: {{ default "gitea" .Values.service.nameOverride }}
+    protocol: http
+{{- if .Values.service.ssh.annotations }}
+  annotations:
+{{ toYaml .Values.service.ssh.annotations | indent 4 }}
+{{- end }}
+spec:
+  type: {{ .Values.service.ssh.serviceType }}
+  ports:
+  - port: {{ .Values.service.ssh.port | int }}
+{{- if contains "NodePort" .Values.service.ssh.serviceType }}
+    nodePort:  {{ .Values.service.ssh.port | int }}
+{{- end }}
+    targetPort:  {{ .Values.service.ssh.port | int }}
+    name: {{ default "gitea" .Values.service.nameOverride }}-ssh
+  selector:
+    app: {{ template "gitea.fullname" . }}
+    release: {{ .Release.Name }}

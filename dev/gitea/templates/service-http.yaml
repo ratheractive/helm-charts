@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "gitea.fullname" . }}-http
+  labels:
+    app: {{ template "gitea.fullname" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: {{ default "gitea" .Values.service.nameOverride }}
+    protocol: http
+{{- if .Values.service.http.annotations }}
+  annotations:
+{{ toYaml .Values.service.http.annotations | indent 4 }}
+{{- end }}
+spec:
+  type: {{ .Values.service.http.serviceType }}
+  ports:
+  - port: {{ .Values.service.http.port | int }}
+{{- if contains "NodePort" .Values.service.http.serviceType }}
+    nodePort:  {{ .Values.service.http.port | int }}
+{{- end }}
+    targetPort: 3000
+    name: {{ default "gitea" .Values.service.nameOverride }}-http
+  selector:
+    app: {{ template "gitea.fullname" . }}
+    release: {{ .Release.Name }}

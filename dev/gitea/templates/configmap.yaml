@@ -1,0 +1,84 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ template "gitea.fullname" . }}-config
+  labels:
+    app: {{ template "gitea.fullname" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: {{ default "gitea" .Values.service.nameOverride }}
+data:
+  app.ini: |-
+    APP_NAME = {{ .Values.gitea.appName }}
+    RUN_MODE = {{ .Values.gitea.runMode }}
+
+    [repository.upload]
+    ENABLED = {{ .Values.gitea.repositoryUploadEnabled }}
+    ALLOWED_TYPES = {{ .Values.gitea.repositoryUploadAllowedTypes }}
+    MAX_FILE_SIZE = {{ .Values.gitea.repositoryUploadMaxFileSize }}
+    MAX_FILES = {{ .Values.gitea.repositoryUploadMaxFiles }}
+
+    [oauth2]
+    ENABLE = true
+    JWT_SECRET = Y8TwjQQ2EdAfZjXXZhFFotPRwxcnkEZvbMkhK10jzWE
+
+    [server]
+    PROTOCOL = http
+    DOMAIN = {{ .Values.gitea.serverDomain }}
+    ROOT_URL = {{ .Values.gitea.serverRootUrl }}
+    LANDING_PAGE = {{ .Values.gitea.serverLandingPage }}
+    SSH_DOMAIN = {{ default .Values.gitea.serverDomain .Values.service.ssh.domain }}
+    SSH_PORT = {{ .Values.service.ssh.port }}
+    SSH_LISTEN_PORT = {{ .Values.service.ssh.port }}
+    START_SSH_SERVER = true
+
+    [service]
+    ENABLE_CAPTCHA = {{ .Values.gitea.serviceEnableCaptcha }}
+    ACTIVE_CODE_LIVE_MINUTES = 180
+    RESET_PASSWD_CODE_LIVE_MINUTES = 180
+    REGISTER_EMAIL_CONFIRM = {{ .Values.gitea.serviceRegisterEmailConfirm }}
+    DISABLE_REGISTRATION = {{ .Values.gitea.serviceDisableRegistration }}
+    REQUIRE_SIGNIN_VIEW = {{ .Values.gitea.serviceRequireSignInView }}
+    ENABLE_NOTIFY_MAIL = {{ .Values.gitea.serviceEnableNotifyMail }}
+    ENABLE_REVERSE_PROXY_AUTHENTICATION = false
+    ENABLE_REVERSE_PROXY_AUTO_REGISTRATION = false
+    SHOW_REGISTRATION_BUTTON = {{ if (eq .Values.gitea.serviceDisableRegistration true) }}false{{else}}true{{end}}
+
+    [database]
+    DB_TYPE = {{ .Values.gitea.database.type | quote }}
+    HOST = {{ .Values.gitea.database.host }}
+    NAME = {{ .Values.gitea.database.name }}
+    USER = {{ .Values.gitea.database.user }}
+    PASSWD = {{ .Values.gitea.database.password }}
+    SSL_MODE = {{ .Values.gitea.database.sslMode }}
+
+    [security]
+    INSTALL_LOCK = true
+    SECRET_KEY = {{ default "" .Values.gitea.securitySecretKey | b64enc | quote }}
+    INTERNAL_TOKEN = abcdefg1234567
+
+    [ui]
+    EXPLORE_PAGING_NUM = {{ .Values.gitea.uiExplorePagingNum }}
+    ISSUE_PAGING_NUM = {{ .Values.gitea.uiIssuePagingNum }}
+    FEED_MAX_COMMIT_NUM = {{ .Values.gitea.uiFeedMaxCommitNum }}
+
+    [cache]
+    ADAPTER = {{ .Values.gitea.cacheAdapter }}
+    INTERVAL = {{ .Values.gitea.cacheInterval }}
+    HOST = {{ .Values.gitea.cacheHost }}
+
+    [webhook]
+    QUEUE_LENGTH = {{ .Values.gitea.webhookQueueLength }}
+    DELIVER_TIMEOUT = {{ .Values.gitea.webhookDeliverTimeout }}
+    SKIP_TLS_VERIFY = {{ .Values.gitea.webhookSkipTlsVerify }}
+    PAGING_NUM = {{ .Values.gitea.webhookPagingNum }}
+
+    [log]
+    MODE = {{ .Values.gitea.logMode }}
+    LEVEL = {{ .Values.gitea.logLevel }}
+
+    [other]
+    SHOW_FOOTER_BRANDING = {{ .Values.gitea.otherShowFooterBranding }}
+    SHOW_FOOTER_VERSION = {{ .Values.gitea.otherShowFooterVersion }}
+    SHOW_FOOTER_TEMPLATE_LOAD_TIME = {{ .Values.gitea.otherShowFooterTemplateLoadTime }}

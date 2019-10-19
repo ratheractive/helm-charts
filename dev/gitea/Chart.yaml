@@ -1,0 +1,12 @@
+apiVersion: v1
+description: 'Gitea: Go Git Service'
+name: gitea
+version: 0.0.2
+home: https://gitea.io/
+icon: https://gitea.io/images/favicon.png
+keywords:
+- git
+- gitea
+maintainers:
+- name: slavoo
+  email: slavoo@gmail.com
