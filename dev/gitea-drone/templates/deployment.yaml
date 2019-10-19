@@ -42,10 +42,10 @@ spec:
               value: {{ .Values.giteadrone.drone_url }}
             - name: DRONE_TOKEN
               value: {{ .Values.giteadrone.drone_token }}
-          {{- with .Values.extraVolumeMounts }}
+          {{- with .Values.extraEnvs }}
           {{- toYaml . | nindent 12 }}
           {{- end }}
-          {{- with .Values.extraEnvs }}
+          {{- with .Values.extraVolumeMounts }}
           volumeMounts:
           {{- toYaml . | nindent 12 }}
           {{- end }}
