@@ -37,9 +37,11 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          envs:
+          env:
+            - name: PORT
+              value: "80"
             - name: DRONE_URL
-              value: {{ .Values.giteadrone.drone_url }}
+              value: "{{ .Values.giteadrone.drone_url }}"
             - name: DRONE_TOKEN
               value: {{ .Values.giteadrone.drone_token }}
           {{- with .Values.extraEnvs }}
