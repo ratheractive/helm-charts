@@ -3,11 +3,11 @@ entries:
   gitea-drone:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-10-19T12:11:43.928117249+01:00
+    created: 2019-10-19T12:20:54.502993616+01:00
     description: Gitea-Drone integration
     digest: 525ac2cd34bc3ba3a433d048685dcd072e343ae13031b237f6770df5d209ffc4
     name: gitea-drone
     urls:
-    - https://slavoo.github.io/helm-chart/gitea-drone-0.1.0.tgz
+    - https://slavoo.github.io/helm-charts/gitea-drone-0.1.0.tgz
     version: 0.1.0
-generated: 2019-10-19T12:11:43.927759546+01:00
+generated: 2019-10-19T12:20:54.502662045+01:00
