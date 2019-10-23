@@ -16,11 +16,11 @@ metadata:
 spec:
   type: {{ .Values.service.ssh.serviceType }}
   ports:
-  - port: {{ .Values.service.ssh.port | int }}
+  - port: {{ .Values.service.ssh.port }}
 {{- if contains "NodePort" .Values.service.ssh.serviceType }}
-    nodePort:  {{ .Values.service.ssh.port | int }}
+    nodePort:  {{ .Values.service.ssh.port }}
 {{- end }}
-    targetPort:  {{ .Values.service.ssh.port | int }}
+    targetPort:  {{ .Values.service.ssh.port }}
     name: {{ default "gitea" .Values.service.nameOverride }}-ssh
   selector:
     app: {{ template "gitea.fullname" . }}

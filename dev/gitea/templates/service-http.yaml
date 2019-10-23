@@ -16,9 +16,9 @@ metadata:
 spec:
   type: {{ .Values.service.http.serviceType }}
   ports:
-  - port: {{ .Values.service.http.port | int }}
+  - port: {{ .Values.service.http.port }}
 {{- if contains "NodePort" .Values.service.http.serviceType }}
-    nodePort:  {{ .Values.service.http.port | int }}
+    nodePort:  {{ .Values.service.http.port }}
 {{- end }}
     targetPort: 3000
     name: {{ default "gitea" .Values.service.nameOverride }}-http
