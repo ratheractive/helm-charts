@@ -2,7 +2,23 @@ apiVersion: v1
 entries:
   gitea:
   - apiVersion: v1
-    created: 2019-10-23T10:51:43.661670425+01:00
+    created: 2019-10-23T12:15:17.943163407+01:00
+    description: 'Gitea: Go Git Service'
+    digest: 31e61740836b5d9e22f8995ba88bff83209097c37ef1d294b0129dc158313cc2
+    home: https://gitea.io/
+    icon: https://gitea.io/images/favicon.png
+    keywords:
+    - git
+    - gitea
+    maintainers:
+    - email: slavoo@gmail.com
+      name: slavoo
+    name: gitea
+    urls:
+    - https://slavoo.github.io/helm-charts/gitea-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
+    created: 2019-10-23T12:15:17.942598271+01:00
     description: 'Gitea: Go Git Service'
     digest: 7665500a8199bb0b74a87399cfb04be6ba24b3e03e2160b0f01c124f59a24c3f
     home: https://gitea.io/
@@ -19,15 +35,15 @@ entries:
     version: 0.0.2
   gitea-drone:
   - apiVersion: v1
-    created: 2019-10-23T10:51:43.664044389+01:00
+    created: 2019-10-23T12:15:17.945918227+01:00
     description: Gitea-Drone integration
-    digest: 4d79efd0e5d9acc2ca078762bcf02aad4aad959afb046dec39a91e17b9ac4cbd
+    digest: b959df4001ea0f2c7808f75efb87316af279742af51a68a18b5a262b0fc9a0f4
     name: gitea-drone
     urls:
     - https://slavoo.github.io/helm-charts/gitea-drone-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v1
-    created: 2019-10-23T10:51:43.663821848+01:00
+    created: 2019-10-23T12:15:17.945567019+01:00
     description: Gitea-Drone integration
     digest: 69be55a777b1a67e46023b0f76fdf247a363194de4be41fa448ced454aed76e6
     name: gitea-drone
@@ -35,7 +51,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-drone-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: 2019-10-23T10:51:43.66348834+01:00
+    created: 2019-10-23T12:15:17.945078975+01:00
     description: Gitea-Drone integration
     digest: 6bc11f8744ce1c7456d47d788fd4b56b56cb999fa059d9c5a2ec0288bdfdae08
     name: gitea-drone
@@ -43,7 +59,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-drone-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: 2019-10-23T10:51:43.663136059+01:00
+    created: 2019-10-23T12:15:17.94461709+01:00
     description: Gitea-Drone integration
     digest: 348f5cbd6ccb14da41b9426d662d87b4c985f493c659039390a9e549d7b51c0a
     name: gitea-drone
@@ -52,7 +68,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-10-23T10:51:43.662727654+01:00
+    created: 2019-10-23T12:15:17.944122766+01:00
     description: Gitea-Drone integration
     digest: 41ac2d2b98273fcca96e7cf2b729af3182e974c3155b723227a7e5ffdc851cab
     name: gitea-drone
@@ -61,7 +77,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-10-23T10:51:43.662152184+01:00
+    created: 2019-10-23T12:15:17.943642532+01:00
     description: Gitea-Drone integration
     digest: 525ac2cd34bc3ba3a433d048685dcd072e343ae13031b237f6770df5d209ffc4
     name: gitea-drone
@@ -71,9 +87,9 @@ entries:
   nginx-ingress-controller:
   - apiVersion: v1
     appVersion: 0.26.1
-    created: 2019-10-23T10:51:43.665634129+01:00
+    created: 2019-10-23T12:15:17.947600466+01:00
     description: Chart for the nginx Ingress controller
-    digest: edf64fd583a58b8abfc0c49a5f31ab42db3630e454454366ea7214f878827af8
+    digest: e42244f3858fdad0457c49f4b3780c59b6d8075d6463d08e9a0e350b6f9a49a9
     engine: gotpl
     home: https://github.com/kubernetes/ingress-nginx
     icon: https://bitnami.com/assets/stacks/nginx-ingress-controller/img/nginx-ingress-controller-stack-220x234.png
@@ -96,9 +112,9 @@ entries:
   openldap:
   - apiVersion: v1
     appVersion: 2.4.47
-    created: 2019-10-23T10:51:43.666582708+01:00
+    created: 2019-10-23T12:15:17.949492458+01:00
     description: Community developed LDAP software
-    digest: 07a1dd0881d26f2d0b56cf2226254f547918de992dd6fdb6ebe4c51adfb91db4
+    digest: 8d37d48f22d9af29b2913be148249d9b73f9194485b13eebbdbbd5fcaad7d233
     engine: gotpl
     home: https://www.openldap.org
     icon: http://www.openldap.org/images/headers/LDAPworm.gif
@@ -114,4 +130,4 @@ entries:
     urls:
     - https://slavoo.github.io/helm-charts/openldap-1.2.2.tgz
     version: 1.2.2
-generated: 2019-10-23T10:51:43.660943303+01:00
+generated: 2019-10-23T12:15:17.94197344+01:00
