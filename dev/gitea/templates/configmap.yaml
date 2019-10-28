@@ -74,6 +74,9 @@ data:
     SKIP_TLS_VERIFY = {{ .Values.gitea.webhookSkipTlsVerify }}
     PAGING_NUM = {{ .Values.gitea.webhookPagingNum }}
 
+    [admin]
+    DISABLE_REGULAR_ORG_CREATION = {{ .Values.gitea.adminDisableRegularOrgCreation }}
+
     [log]
     MODE = {{ .Values.gitea.logMode }}
     LEVEL = {{ .Values.gitea.logLevel }}

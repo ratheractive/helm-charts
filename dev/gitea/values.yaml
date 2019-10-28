@@ -234,6 +234,9 @@ gitea:
   ##
   uiFeedMaxCommitNum: 5
 
+  ## whether non-admin users should be allowed to create orgs
+  adminDisableRegularOrgCreation: false
+
   extraVolumes:
   extraVolumeMounts:
 
