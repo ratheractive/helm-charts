@@ -44,6 +44,7 @@ data:
     ENABLE_REVERSE_PROXY_AUTHENTICATION = false
     ENABLE_REVERSE_PROXY_AUTO_REGISTRATION = false
     SHOW_REGISTRATION_BUTTON = {{ if (eq .Values.gitea.serviceDisableRegistration true) }}false{{else}}true{{end}}
+    DEFAULT_ALLOW_CREATE_ORGANIZATION = {{ .Values.gitea.serviceDefaultAllowCreateOrganization }}
 
     [database]
     DB_TYPE = {{ .Values.gitea.database.type | quote }}

@@ -237,6 +237,8 @@ gitea:
   ## whether non-admin users should be allowed to create orgs
   adminDisableRegularOrgCreation: false
 
+  serviceDefaultAllowCreateOrganization: true
+
   extraVolumes:
   extraVolumeMounts:
 
