@@ -30,8 +30,8 @@ data:
     LANDING_PAGE = {{ .Values.gitea.serverLandingPage }}
     SSH_DOMAIN = {{ default .Values.gitea.serverDomain .Values.service.ssh.domain }}
     SSH_PORT = {{ .Values.service.ssh.port }}
-    SSH_LISTEN_PORT = {{ .Values.service.ssh.port }}
-    START_SSH_SERVER = true
+    SSH_LISTEN_PORT = 33
+    START_SSH_SERVER = {{ .Values.serverStartSshServer }}
 
     [service]
     ENABLE_CAPTCHA = {{ .Values.gitea.serviceEnableCaptcha }}

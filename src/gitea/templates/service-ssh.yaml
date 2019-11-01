@@ -20,7 +20,7 @@ spec:
 {{- if contains "NodePort" .Values.service.ssh.serviceType }}
     nodePort:  {{ .Values.service.ssh.port }}
 {{- end }}
-    targetPort:  {{ .Values.service.ssh.port }}
+    targetPort:  {{- if .Values.service.serverStartSshServer }} 33 {{- else }} 22 {{- end }}
     name: {{ default "gitea" .Values.service.nameOverride }}-ssh
   selector:
     app: {{ template "gitea.fullname" . }}

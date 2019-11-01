@@ -27,7 +27,8 @@ spec:
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           ports:
             - containerPort: 3000
-            - containerPort: {{ .Values.service.ssh.port }}
+            - containerPort: 22
+            - containerPort: 33
           livenessProbe:
             httpGet:
               path: /
