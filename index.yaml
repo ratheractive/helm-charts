@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   gitea:
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.090994823Z
+    created: 2019-11-10T13:26:22.174724195Z
     description: 'Gitea: Go Git Service'
-    digest: f639bdbc533fcd32c11b11e30dc1769189089bd9dc1c3f3a9c6b438335c1fa7c
+    digest: efef7afa6996629379e47c83220182e403d42f7db60b171f329f9819953338f7
     home: https://gitea.io/
     icon: https://gitea.io/images/favicon.png
     keywords:
@@ -18,7 +18,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-0.0.8.tgz
     version: 0.0.8
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.090507213Z
+    created: 2019-11-10T13:26:22.174357871Z
     description: 'Gitea: Go Git Service'
     digest: 3acbb82bbc9278362418d6103f29a8f6c18982aecfbdf02eaeee3a20f62211b5
     home: https://gitea.io/
@@ -34,7 +34,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.089856771Z
+    created: 2019-11-10T13:26:22.173970667Z
     description: 'Gitea: Go Git Service'
     digest: 62edf12d9fcb8baed812189896fb7b6aadc6af77cd9ece4d77d00b1773172c92
     home: https://gitea.io/
@@ -50,7 +50,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.089152799Z
+    created: 2019-11-10T13:26:22.173612593Z
     description: 'Gitea: Go Git Service'
     digest: eb008b01702138c6953d0bda27be795bca169399a6552ecfe8cd3ce4be66f88b
     home: https://gitea.io/
@@ -66,7 +66,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.088493467Z
+    created: 2019-11-10T13:26:22.173234229Z
     description: 'Gitea: Go Git Service'
     digest: 7f7442d515cfd0551e6afe329915917b4f7d94424be9aa8f5ca831334b6dead0
     home: https://gitea.io/
@@ -82,7 +82,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.087880654Z
+    created: 2019-11-10T13:26:22.172891613Z
     description: 'Gitea: Go Git Service'
     digest: 31e61740836b5d9e22f8995ba88bff83209097c37ef1d294b0129dc158313cc2
     home: https://gitea.io/
@@ -98,7 +98,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.087247763Z
+    created: 2019-11-10T13:26:22.17254983Z
     description: 'Gitea: Go Git Service'
     digest: ffb37f359d102b8184343f91574e2d704cbcb4f22226cb5787ff930ead5b63c6
     home: https://gitea.io/
@@ -115,15 +115,15 @@ entries:
     version: 0.0.2
   gitea-drone:
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.094086209Z
+    created: 2019-11-10T13:26:22.176879551Z
     description: Gitea-Drone integration
-    digest: 260baa530714140e70f7cffa200597f7e2b8b550b8ae9f3ab97b3c05d597b0a2
+    digest: a6c5ac5ee0c52d735935de2c95ee447344836c26df36a9887022119f9035fb92
     name: gitea-drone
     urls:
     - https://slavoo.github.io/helm-charts/gitea-drone-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.093875571Z
+    created: 2019-11-10T13:26:22.176208Z
     description: Gitea-Drone integration
     digest: 69be55a777b1a67e46023b0f76fdf247a363194de4be41fa448ced454aed76e6
     name: gitea-drone
@@ -131,7 +131,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-drone-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.093512969Z
+    created: 2019-11-10T13:26:22.175640393Z
     description: Gitea-Drone integration
     digest: 6bc11f8744ce1c7456d47d788fd4b56b56cb999fa059d9c5a2ec0288bdfdae08
     name: gitea-drone
@@ -139,7 +139,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-drone-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: 2019-11-10T13:24:56.093142696Z
+    created: 2019-11-10T13:26:22.17538117Z
     description: Gitea-Drone integration
     digest: 348f5cbd6ccb14da41b9426d662d87b4c985f493c659039390a9e549d7b51c0a
     name: gitea-drone
@@ -148,7 +148,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-10T13:24:56.092674203Z
+    created: 2019-11-10T13:26:22.175160312Z
     description: Gitea-Drone integration
     digest: 41ac2d2b98273fcca96e7cf2b729af3182e974c3155b723227a7e5ffdc851cab
     name: gitea-drone
@@ -157,7 +157,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-11-10T13:24:56.092199103Z
+    created: 2019-11-10T13:26:22.174939833Z
     description: Gitea-Drone integration
     digest: 525ac2cd34bc3ba3a433d048685dcd072e343ae13031b237f6770df5d209ffc4
     name: gitea-drone
@@ -167,9 +167,9 @@ entries:
   nginx-ingress-controller:
   - apiVersion: v1
     appVersion: 0.26.1
-    created: 2019-11-10T13:24:56.095076685Z
+    created: 2019-11-10T13:26:22.177913697Z
     description: Chart for the nginx Ingress controller
-    digest: 7732195b1ebc5f2be1f98c4df2e9f55edf3416c076b33eac377780d9b91114c0
+    digest: 0d806a628066dc555c6e71f4f52ace551f7a95ea40621fdb6ec3dbd90da4a42c
     engine: gotpl
     home: https://github.com/kubernetes/ingress-nginx
     icon: https://bitnami.com/assets/stacks/nginx-ingress-controller/img/nginx-ingress-controller-stack-220x234.png
@@ -192,9 +192,9 @@ entries:
   openldap:
   - apiVersion: v1
     appVersion: 2.4.47
-    created: 2019-11-10T13:24:56.095490648Z
+    created: 2019-11-10T13:26:22.178336014Z
     description: Community developed LDAP software
-    digest: 90c5f96d4cbb5d5ff60d505c590ff4843933dc8e372a638a133902692964f723
+    digest: 44d8f913e24d0a08d124d627433ed9db4eb61a295d363ae9f0c40749ddd1d9ca
     engine: gotpl
     home: https://www.openldap.org
     icon: http://www.openldap.org/images/headers/LDAPworm.gif
@@ -210,4 +210,4 @@ entries:
     urls:
     - https://slavoo.github.io/helm-charts/openldap-1.2.2.tgz
     version: 1.2.2
-generated: 2019-11-10T13:24:56.086437671Z
+generated: 2019-11-10T13:26:22.172076924Z
