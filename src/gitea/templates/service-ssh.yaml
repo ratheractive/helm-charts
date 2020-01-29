@@ -8,7 +8,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     component: {{ default "gitea" .Values.service.nameOverride }}
-    protocol: http
+    protocol: ssh
 {{- if .Values.service.ssh.annotations }}
   annotations:
 {{ toYaml .Values.service.ssh.annotations | indent 4 }}

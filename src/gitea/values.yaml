@@ -8,7 +8,7 @@
 replicaCount: 1
 
 image: gitea/gitea
-imageTag: 1.9.5
+imageTag: 1.10.3
 imagePullPolicy: IfNotPresent
 
 service:
@@ -243,7 +243,7 @@ gitea:
   
   extraVolumes:
   extraVolumeMounts:
-
+  extraAnnotations:
 
 ## Persistent Volume Storage configuration.
 ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes

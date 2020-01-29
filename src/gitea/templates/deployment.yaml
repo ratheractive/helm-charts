@@ -20,6 +20,10 @@ spec:
       labels:
         app: {{ template "gitea.fullname" . }}
         release: {{ .Release.Name }}
+      annotations:
+      {{- with .Values.gitea.extraAnnotations }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -72,5 +76,5 @@ spec:
         emptyDir: {}
       {{- end -}}
       {{- with .Values.gitea.extraVolumes }}
-        {{- toYaml . | nindent 6 }}
+      {{- toYaml . | nindent 6 }}
       {{- end }}
