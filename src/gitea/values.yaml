@@ -243,7 +243,8 @@ gitea:
   
   extraVolumes:
   extraVolumeMounts:
-  extraAnnotations:
+
+podAnnotations:
 
 ## Persistent Volume Storage configuration.
 ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes
