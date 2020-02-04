@@ -45,7 +45,7 @@ spec:
             - name: PARSE_HOST
               value: {{ include "parse.host" . | quote }}
             - name: PARSE_USE_HOSTNAME
-              value: {{ ternary "yes" "no" .Values.ingress.enabled | quote }}
+              value: {{ ternary "yes" "no" .Values.ingress.dashboard.enabled | quote }}
             - name: PARSE_PORT_NUMBER
               value: {{ include "parse.external-port" . | quote }}
             - name: PARSE_PROTOCOL

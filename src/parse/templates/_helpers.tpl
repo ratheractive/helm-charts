@@ -82,7 +82,7 @@ Helm 2.11 supports the assignment of a value to a variable defined in a differen
 but Helm 2.9 and 2.10 does not support it, so we need to implement this if-else logic.
 */}}
 {{- $host := default "" .Values.server.host -}}
-{{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.server.enabled -}}
 {{- $ingressHost := first .Values.ingress.server.hosts -}}
 {{- $serverHost := default $ingressHost.name $host -}}
 {{- default (include "parse.serviceIP" .) $serverHost -}}
@@ -100,7 +100,7 @@ When using ingress, we should use the port 80/443 instead of service.port
 Helm 2.11 supports the assignment of a value to a variable defined in a different scope,
 but Helm 2.9 and 2.10 does not support it, so we need to implement this if-else logic.
 */}}
-{{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.server.enabled -}}
 {{- $ingressHttpPort := "80" -}}
 {{- $ingressHttpsPort := "443" -}}
 {{- if eq .Values.dashboard.parseServerUrlProtocol "https" -}}
@@ -312,7 +312,7 @@ Compile all warnings into a single message, and call fail.
 Validate values of Parse Dashboard - if tls is enable on server side must provide https protocol
 */}}
 {{- define "parse.validateValues.dashboard.serverUrlProtocol" -}}
-{{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.server.enabled -}}
 {{- range .Values.ingress.server.hosts -}}
 {{- if and (.tls) (ne $.Values.dashboard.parseServerUrlProtocol "https") -}}
 parse: dashboard.parseServerUrlProtocol

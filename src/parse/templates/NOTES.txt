@@ -8,7 +8,7 @@ Parse Server
 
 1. Get your Parse Server URL:
 
-{{- if .Values.ingress.enabled }}
+{{- if .Values.ingress.server.enabled }}
 {{ $ingressHost := first .Values.ingress.server.hosts }}
 
   You should be able to access Parse Server through: {{- range .Values.ingress.server.hosts }} {{ if .tls }}https{{ else }}http{{ end }}://{{ .name }} {{- end }}
@@ -73,7 +73,7 @@ service:
 
 1. Get the Parse Dashboard URL:
 
-{{- if .Values.ingress.enabled }}
+{{- if .Values.ingress.dashboard.enabled }}
 
   You should be able to access Parse Dashboard through: {{- range .Values.ingress.dashboard.hosts }} {{ if .tls }}https{{ else }}http{{ end }}://{{ .name }} {{- end }}
 
