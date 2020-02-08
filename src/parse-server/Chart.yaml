@@ -1,0 +1,9 @@
+apiVersion: v2
+name: parse-server
+description: chart for the parse-server
+
+type: application
+
+version: 0.1.0
+
+appVersion: 3.10.0

@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "parse-server.fullname" . }}
+  labels:
+    {{- include "parse-server.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "parse-server.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "parse-server.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "parse-server.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: PARSE_SERVER_APP_NAME
+              value: {{ .Values.server.appName }}
+            - name: PARSE_SERVER_MASTER_KEY
+              value: {{ .Values.server.masterKey }}
+            - name: PARSE_SERVER_APPLICATION_ID
+              value: {{ .Values.server.appId }}
+            - name: PARSE_SERVER_MOUNT_PATH
+              value: {{ .Values.server.mountPath }}
+            - name: PARSE_SERVER_DATABASE_URI
+              value: "mongodb://$(MONGODB_USER):$(MONGODB_PASSWORD)@{{ .Values.server.mongodb.host }}/{{ .Values.server.mongodb.dbName }}"
+            - name: PARSE_SERVER_LOGS_FOLDER
+              value: "null"
+          envFrom:
+            - secretRef:
+                name: {{ include "mongodb.credentials.secret" . }}
+          ports:
+            - name: http
+              containerPort: 1337
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.server.mountPath }}/users
+              port: http
+              httpHeaders:
+                - name: X-Parse-Application-Id
+                  value: {{ .Values.server.appId }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.server.mountPath }}/users
+              port: http
+              httpHeaders:
+                - name: X-Parse-Application-Id
+                  value: {{ .Values.server.appId }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
