@@ -40,6 +40,9 @@ spec:
               value: "mongodb://$(MONGODB_USER):$(MONGODB_PASSWORD)@{{ .Values.server.mongodb.host }}/{{ .Values.server.mongodb.dbName }}"
             - name: PARSE_SERVER_LOGS_FOLDER
               value: "null"
+              {{- with .Values.server.extraEnvVars }}
+              {{- toYaml . | nindent 12 }}
+              {{- end }}
           envFrom:
             - secretRef:
                 name: {{ include "mongodb.credentials.secret" . }}

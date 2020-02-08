@@ -72,6 +72,7 @@ server:
   appId: myAppId
   masterKey: myMasterKey
   mountPath: /parse
+  extraEnvVars: []
 
 # if you decide to set the dbName, make sure the user+password is configured for the db and the db exists.
 # If you don't set dbName, one will be created for you.
