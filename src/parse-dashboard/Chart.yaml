@@ -1,0 +1,9 @@
+apiVersion: v2
+name: parse-dashboard
+description: chart for the parse-dashboard
+
+type: application
+
+version: 2.0.5
+
+appVersion: 2.0.5
