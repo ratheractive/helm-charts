@@ -73,10 +73,10 @@ dashboard:
   config:
     apps:
     - appName: 
-      parseGraphQLUrl: 
-      parseServerUrl: 
       appId: 
       masterKey:  
+      serverUrl: 
+      graphQLServerURL: 
     users:
     - user: 
       password: 
