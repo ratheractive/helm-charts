@@ -5,4 +5,5 @@ metadata:
   labels:
     {{- include "parse-dashboard.labels" . | nindent 4 }}
 data:
-  parse-dashboard-config.json: {{ .Values.dashboard.config | toPrettyJson }}
+  parse-dashboard-config.json: |-
+{{ .Values.dashboard.config | toPrettyJson | indent 4 }}
