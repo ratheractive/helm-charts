@@ -8,7 +8,7 @@
 replicaCount: 1
 
 image: gitea/gitea
-imageTag: 1.10.3
+imageTag: 1.11.1
 imagePullPolicy: IfNotPresent
 
 service:
@@ -240,6 +240,8 @@ gitea:
   serviceDefaultAllowCreateOrganization: true
 
   serverStartSshServer: false
+
+  serverStartLfsServer: false
   
   extraVolumes:
   extraVolumeMounts:

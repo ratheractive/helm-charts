@@ -32,7 +32,8 @@ data:
     SSH_PORT = {{ .Values.service.ssh.port }}
     SSH_LISTEN_PORT = 33
     START_SSH_SERVER = {{ .Values.serverStartSshServer }}
-
+    LFS_START_SERVER = { .Values.serverStartLfsServer }}
+    
     [service]
     ENABLE_CAPTCHA = {{ .Values.gitea.serviceEnableCaptcha }}
     ACTIVE_CODE_LIVE_MINUTES = 180
