@@ -245,6 +245,8 @@ gitea:
   serverStartLfsServer: false
 
   serverLfsJwtSecret: ""
+
+  serverLfsContentPath: "/data/git/lfs"
   
   extraVolumes:
   extraVolumeMounts:

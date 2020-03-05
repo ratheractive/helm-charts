@@ -33,7 +33,8 @@ data:
     SSH_LISTEN_PORT = 33
     START_SSH_SERVER = {{ .Values.gitea.serverStartSshServer }}
     LFS_START_SERVER = {{ .Values.gitea.serverStartLfsServer }}
-    LFS_JWT_SECRET =  {{ .Values.gitea.serverLfsJwtSecret }}
+    LFS_JWT_SECRET = {{ .Values.gitea.serverLfsJwtSecret }}
+    LFS_CONTENT_PATH = {{ .Values.gitea.serverLfsContentPath }}
     
     [service]
     ENABLE_CAPTCHA = {{ .Values.gitea.serviceEnableCaptcha }}
