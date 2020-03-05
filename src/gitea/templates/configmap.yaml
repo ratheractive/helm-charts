@@ -21,7 +21,7 @@ data:
 
     [oauth2]
     ENABLE = true
-    JWT_SECRET = Y8TwjQQ2EdAfZjXXZhFFotPRwxcnkEZvbMkhK10jzWE
+    JWT_SECRET = {{ .Values.gitea.oauth2JwtSecret }}
 
     [server]
     PROTOCOL = http
@@ -33,6 +33,7 @@ data:
     SSH_LISTEN_PORT = 33
     START_SSH_SERVER = {{ .Values.gitea.serverStartSshServer }}
     LFS_START_SERVER = {{ .Values.gitea.serverStartLfsServer }}
+    LFS_JWT_SECRET =  {{ .Values.gitea.serverLfsJwtSecret }}
     
     [service]
     ENABLE_CAPTCHA = {{ .Values.gitea.serviceEnableCaptcha }}

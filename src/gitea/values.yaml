@@ -221,6 +221,7 @@ gitea:
   ##
   securitySecretKey: "changeme"
 
+  oauth2JwtSecret: ""
   ## Number of repositories that are showed in one explore page
   ##
   uiExplorePagingNum: 20
@@ -242,6 +243,8 @@ gitea:
   serverStartSshServer: false
 
   serverStartLfsServer: false
+
+  serverLfsJwtSecret: ""
   
   extraVolumes:
   extraVolumeMounts:
