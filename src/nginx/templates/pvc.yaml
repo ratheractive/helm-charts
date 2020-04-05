@@ -1,0 +1,29 @@
+{{- range .Values.extraVolumes }}
+{{- if .claimName -}}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .claimName }}
+  labels:
+    app: {{ template "nginx.name" $ }}
+    chart: {{ template "nginx.chart" $ }}
+    release: {{ $.Release.Name }}
+    heritage: {{ $.Release.Service }}
+{{- if $.Values.extraLabels }}
+{{ toYaml $.Values.extraLabels | indent 4 }}
+{{- end }}
+spec:
+  accessModes:
+    - {{ .accessMode | default ("ReadWriteMany") | quote }}
+  resources:
+    requests:
+      storage: {{ .size | quote }}
+{{- if .storageClass }}
+{{- if (eq "-" .storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .storageClass }}"
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
