@@ -8,7 +8,7 @@
 replicaCount: 1
 
 image: gitea/gitea
-imageTag: 1.11.1
+imageTag: 1.11.4
 imagePullPolicy: IfNotPresent
 
 service:
