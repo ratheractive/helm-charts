@@ -1,7 +1,7 @@
 apiVersion: v1
 description: 'Gitea: Go Git Service'
 name: gitea
-version: 1.11.4
+version: 1.11.5
 home: https://gitea.io/
 icon: https://gitea.io/images/favicon.png
 keywords:
