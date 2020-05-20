@@ -53,9 +53,8 @@ spec:
             - name: nginx-server-block
               mountPath: /opt/bitnami/nginx/conf/server_blocks
           {{- end }}
-          {{- range .Values.extraVolumes }}
-            - name: {{ .name }}
-              mountPath: {{ .mountPath }}
+          {{- with .Values.extraVolumeMounts }}
+          {{- toYaml . | nindent 12 }}
           {{- end }}
         {{- if .Values.metrics.enabled }}
         - name: metrics
@@ -89,10 +88,6 @@ spec:
           configMap:
             name: {{ template "nginx.fullname" . }}
         {{- end }}
-        {{- range .Values.extraVolumes }}
-        {{- if .claimName }}
-        - name: {{ .name }}
-          persistentVolumeClaim:
-            claimName: {{ .claimName }}
-        {{- end}}
-        {{- end -}}
+        {{- with .Values.extraVolumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}

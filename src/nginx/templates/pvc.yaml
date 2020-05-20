@@ -1,9 +1,9 @@
-{{- range .Values.extraVolumes }}
-{{- if .claimName -}}
+{{- range .Values.extraClaims }}
+{{- if .name -}}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ .claimName }}
+  name: {{ .name }}
   labels:
     app: {{ template "nginx.name" $ }}
     chart: {{ template "nginx.chart" $ }}
