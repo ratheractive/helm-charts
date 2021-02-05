@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "postfix-relay.fullname" . }}
+  labels:
+    {{- include "postfix-relay.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "postfix-relay.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "postfix-relay.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "postfix-relay.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: TX_SMTP_RELAY_HOST
+              value: "{{ .Values.smtpRelay.host }}"
+            - name: TX_SMTP_RELAY_MYHOSTNAME
+              value: "{{ .Values.smtpRelay.myHostName }}"
+            - name: TX_SMTP_RELAY_USERNAME
+              value: "{{ .Values.smtpRelay.username }}"
+            - name: TX_SMTP_RELAY_PASSWORD
+              value: "{{ .Values.smtpRelay.password }}"
+            - name: TX_SMTP_RELAY_NETWORKS
+              value: "{{ .Values.smtpRelay.networks }}"
+            - name: POSTFIX_CUSTOM_CONFIG
+              value: "{{ .Values.smtpRelay.customConfig }}"
+          ports:
+            - name: smtp
+              containerPort: 25
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: smtp
+            initialDelaySeconds: 3
+          readinessProbe:
+            tcpSocket:
+              port: smtp
+            initialDelaySeconds: 3
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
