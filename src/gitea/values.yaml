@@ -247,7 +247,28 @@ gitea:
   serverLfsJwtSecret: ""
 
   serverLfsContentPath: "/data/git/lfs"
-  
+
+  mailer:
+    enabled : false
+    sendBufferLen : 100
+    subjectPrefix : 
+    host : 
+    disableHelo : 
+    heloHostname : 
+    skipVerify : false
+    useCertificate : false
+    certFile : custom/mailer/cert.pem
+    keyFile : custom/mailer/key.pem
+    isTlsEnabled : false
+    from : 
+    user : 
+    passwd : 
+    sendAsPlainText : false
+    mailerType : smtp
+    sendmailPath : sendmail
+    sendmailArgs : 
+    sendmailTimeout : 5m
+
   extraVolumes:
   extraVolumeMounts:
 

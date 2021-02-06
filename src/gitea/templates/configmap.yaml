@@ -89,3 +89,24 @@ data:
     SHOW_FOOTER_BRANDING = {{ .Values.gitea.otherShowFooterBranding }}
     SHOW_FOOTER_VERSION = {{ .Values.gitea.otherShowFooterVersion }}
     SHOW_FOOTER_TEMPLATE_LOAD_TIME = {{ .Values.gitea.otherShowFooterTemplateLoadTime }}
+
+    [mailer]
+    ENABLED = {{ .Values.gitea.mailer.enabled }}
+    SEND_BUFFER_LEN = {{ .Values.gitea.mailer.sendBufferLen }}
+    SUBJECT_PREFIX = {{ .Values.gitea.mailer.subjectPrefix }}
+    HOST = {{ .Values.gitea.mailer.host }}
+    DISABLE_HELO = {{ .Values.gitea.mailer.disableHelo }}
+    HELO_HOSTNAME = {{ .Values.gitea.mailer.heloHostname }}
+    SKIP_VERIFY = {{ .Values.gitea.mailer.skipVerify }}
+    USE_CERTIFICATE = {{ .Values.gitea.mailer.useCertificate }}
+    CERT_FILE = {{ .Values.gitea.mailer.certFile }}
+    KEY_FILE = {{ .Values.gitea.mailer.keyFile }}
+    IS_TLS_ENABLED = {{ .Values.gitea.mailer.isTlsEnabled }}
+    FROM = {{ .Values.gitea.mailer.from }}
+    USER = {{ .Values.gitea.mailer.user }}
+    PASSWD = {{ .Values.gitea.mailer.passwd }}
+    SEND_AS_PLAIN_TEXT = {{ .Values.gitea.mailer.sendAsPlainText }}
+    MAILER_TYPE = {{ .Values.gitea.mailer.mailerType }}
+    SENDMAIL_PATH = {{ .Values.gitea.mailer.sendmailPath }}
+    SENDMAIL_ARGS = {{ .Values.gitea.mailer.sendmailArgs }}
+    SENDMAIL_TIMEOUT = {{ .Values.gitea.mailer.sendmailTimeout }}
