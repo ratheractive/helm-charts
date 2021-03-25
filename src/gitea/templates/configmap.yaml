@@ -110,3 +110,13 @@ data:
     SENDMAIL_PATH = {{ .Values.gitea.mailer.sendmailPath }}
     SENDMAIL_ARGS = {{ .Values.gitea.mailer.sendmailArgs }}
     SENDMAIL_TIMEOUT = {{ .Values.gitea.mailer.sendmailTimeout }}
+
+    [attachment]
+    PATH = /data/attachments
+
+    [picture]
+    AVATAR_UPLOAD_PATH = /data/avatars
+    REPOSITORY_AVATAR_UPLOAD_PATH = /data/repo-avatars
+
+    [queue]
+    DATADIR = /data/queues/
