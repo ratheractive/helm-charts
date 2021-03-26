@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   gitea:
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.631091193Z"
+    created: "2021-03-26T12:14:16.906091621Z"
     description: 'Gitea: Go Git Service'
     digest: a67ca81b3e54bab298aae411879c8941e1a92f1248b8a94106a0486fbc9f3939
     home: https://gitea.io/
@@ -18,7 +18,23 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.13.6+2.tgz
     version: 1.13.6+2
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.631653177Z"
+    created: "2021-03-26T12:14:16.906627926Z"
+    description: 'Gitea: Go Git Service'
+    digest: 6c73f96196cd3b02573321b63865f417df9599ed291e900481261735bbcb12f6
+    home: https://gitea.io/
+    icon: https://gitea.io/images/favicon.png
+    keywords:
+    - git
+    - gitea
+    maintainers:
+    - email: slavoo@gmail.com
+      name: slavoo
+    name: gitea
+    urls:
+    - https://slavoo.github.io/helm-charts/gitea-1.13.6+3.tgz
+    version: 1.13.6+3
+  - apiVersion: v1
+    created: "2021-03-26T12:14:16.90722792Z"
     description: 'Gitea: Go Git Service'
     digest: 133be67a962d3877c96519a754b9c9ed5d576f048bcb1e62ae50665637c0ce85
     home: https://gitea.io/
@@ -34,7 +50,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.13.6-1.tgz
     version: 1.13.6-1
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.630579644Z"
+    created: "2021-03-26T12:14:16.905598355Z"
     description: 'Gitea: Go Git Service'
     digest: 6748dd1a2c3d912d12826e74b4a8a68092d0e34d9167f836f100361f469f7257
     home: https://gitea.io/
@@ -50,7 +66,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.13.2.tgz
     version: 1.13.2
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.629987262Z"
+    created: "2021-03-26T12:14:16.905116649Z"
     description: 'Gitea: Go Git Service'
     digest: 92189b024b455ffbd139a76f573677f2984d2e5475aecb1d6b3d54749aafe91e
     home: https://gitea.io/
@@ -66,7 +82,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.13.2-1.tgz
     version: 1.13.2-1
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.629405742Z"
+    created: "2021-03-26T12:14:16.904608276Z"
     description: 'Gitea: Go Git Service'
     digest: 6ff9a768b6906154a4dd3f92496c8e84e1562e4007bcf871a9be53ae904b4f80
     home: https://gitea.io/
@@ -82,7 +98,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.13.1.tgz
     version: 1.13.1
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.628853743Z"
+    created: "2021-03-26T12:14:16.904121228Z"
     description: 'Gitea: Go Git Service'
     digest: de095746f0affaa044fd1e9b3908909298901d52a1b66cd4a93db6824345d3e3
     home: https://gitea.io/
@@ -98,7 +114,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.12.3.tgz
     version: 1.12.3
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.628320207Z"
+    created: "2021-03-26T12:14:16.903573053Z"
     description: 'Gitea: Go Git Service'
     digest: e8de957ac51f76fc5f98fac4647017222695da1b08ba1195982ea83277c25fae
     home: https://gitea.io/
@@ -114,7 +130,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.11.5.tgz
     version: 1.11.5
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.627759368Z"
+    created: "2021-03-26T12:14:16.903014938Z"
     description: 'Gitea: Go Git Service'
     digest: 29f8ff722a98a07812342778d82f6b2d8528f4d74f02116d9c13f734aa415515
     home: https://gitea.io/
@@ -130,7 +146,7 @@ entries:
     - https://slavoo.github.io/helm-charts/gitea-1.11.4.tgz
     version: 1.11.4
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.627165012Z"
+    created: "2021-03-26T12:14:16.902482192Z"
     description: 'Gitea: Go Git Service'
     digest: a6818de3e3a40653b386f84ae562b3ba89c026935f46c540a39089e36f7b6bbe
     home: https://gitea.io/
@@ -147,7 +163,7 @@ entries:
     version: 0.0.12
   gitea-drone:
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.632043555Z"
+    created: "2021-03-26T12:14:16.907546639Z"
     description: Gitea-Drone integration
     digest: 93e6973abf54b13bbe2995a976577b2521159a971aa61bfbf669e2750db18d45
     name: gitea-drone
@@ -157,7 +173,7 @@ entries:
   nginx:
   - apiVersion: v1
     appVersion: 1.18.0
-    created: "2021-03-25T17:53:31.632775281Z"
+    created: "2021-03-26T12:14:16.908326186Z"
     description: Chart for the nginx server
     digest: b97a24f82ac9497b3473cf76cd45520b33f9d9d1a595f187c8785ca85b6e4c95
     home: http://www.nginx.org
@@ -180,7 +196,7 @@ entries:
   nginx-ingress-controller:
   - apiVersion: v1
     appVersion: 0.30.0
-    created: "2021-03-25T17:53:31.634554678Z"
+    created: "2021-03-26T12:14:16.910779513Z"
     description: Chart for the nginx Ingress controller
     digest: 98cabc8341ea4895d9f675e1b3cdb5be376bd5dea0e437f32882e6af54eebb59
     home: https://github.com/kubernetes/ingress-nginx
@@ -203,7 +219,7 @@ entries:
     version: 5.0.10
   - apiVersion: v1
     appVersion: 0.26.1
-    created: "2021-03-25T17:53:31.63585009Z"
+    created: "2021-03-26T12:14:16.912077053Z"
     description: Chart for the nginx Ingress controller
     digest: 4d0f2beb7ef379cf24d9dae331e3b1976691390867b450a41380f7746c366f7b
     home: https://github.com/kubernetes/ingress-nginx
@@ -226,7 +242,7 @@ entries:
     version: 5.0.9
   openldap:
   - apiVersion: v1
-    created: "2021-03-25T17:53:31.636882104Z"
+    created: "2021-03-26T12:14:16.913166411Z"
     description: Community developed LDAP software
     digest: 67ced4eb72e1790881ca18b196c7d550278cdb7db5494c7a7d9254ce8b2db994
     home: https://www.openldap.org
@@ -245,7 +261,7 @@ entries:
     version: 1.2.5
   - apiVersion: v1
     appVersion: 2.4.47
-    created: "2021-03-25T17:53:31.636381678Z"
+    created: "2021-03-26T12:14:16.912666406Z"
     description: Community developed LDAP software
     digest: 5dca9b5dc7d24a125ef7b3f5ef7e7cd880533439b343238f05fd58234b862242
     home: https://www.openldap.org
@@ -265,7 +281,7 @@ entries:
   parse-dashboard:
   - apiVersion: v2
     appVersion: 2.0.5
-    created: "2021-03-25T17:53:31.637291591Z"
+    created: "2021-03-26T12:14:16.913576546Z"
     description: chart for the parse-dashboard
     digest: 889f6cb14be5ce78720853914f9dc5a658d2cc25b1a48751d4e91b7b05973509
     name: parse-dashboard
@@ -276,7 +292,7 @@ entries:
   parse-server:
   - apiVersion: v2
     appVersion: 3.10.0
-    created: "2021-03-25T17:53:31.637684824Z"
+    created: "2021-03-26T12:14:16.913956621Z"
     description: chart for the parse-server
     digest: 2310f5ef0a0344d189e140d259377088ac40eed07190c920b4f1143f3c65bf95
     name: parse-server
@@ -287,7 +303,7 @@ entries:
   postfix-relay:
   - apiVersion: v2
     appVersion: 3.5.9
-    created: "2021-03-25T17:53:31.63806173Z"
+    created: "2021-03-26T12:14:16.914295326Z"
     description: A Very simple postfix based smtp relay
     digest: de7ab70e04687564e6904c291de3bc89227f8eb6202c054ca471e604561ed03d
     name: postfix-relay
@@ -295,4 +311,4 @@ entries:
     urls:
     - https://slavoo.github.io/helm-charts/postfix-relay-3.5.9.tgz
     version: 3.5.9
-generated: "2021-03-25T17:53:31.621003054Z"
+generated: "2021-03-26T12:14:16.901637783Z"

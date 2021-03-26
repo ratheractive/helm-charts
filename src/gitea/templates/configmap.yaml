@@ -120,3 +120,12 @@ data:
 
     [queue]
     DATADIR = /data/queues/
+
+    [indexer]
+    ISSUE_INDEXER_PATH = /data/indexers/issues.bleve
+    ISSUE_INDEXER_QUEUE_DIR = /data/indexers/issues.queue
+    REPO_INDEXER_PATH = /data/indexers/repos.bleve
+
+    [session]
+    PROVIDER = file
+    PROVIDER_CONFIG = /data/sessions
