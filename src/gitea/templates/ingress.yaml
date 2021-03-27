@@ -23,8 +23,10 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: {{ printf "%s-%s" $releaseName $serviceName | trunc 63 | trimSuffix "-" }}-http
-              servicePort: {{ $httpPort }}
+              service:
+                name: {{ printf "%s-%s" $releaseName $serviceName | trunc 63 | trimSuffix "-" }}-http
+                port:
+                  number: {{ $httpPort }}
     {{- end -}}
 {{- if .Values.service.ingress.tls }}
   tls:
