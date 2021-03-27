@@ -22,7 +22,9 @@ spec:
     - host: {{ . }}
       http:
         paths:
-          - backend:
+          - path: "/"
+            pathType: Prefix
+            backend:
               service:
                 name: {{ printf "%s-%s" $releaseName $serviceName | trunc 63 | trimSuffix "-" }}-http
                 port:
