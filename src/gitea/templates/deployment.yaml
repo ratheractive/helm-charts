@@ -8,8 +8,6 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     component: {{ default "gitea" .Values.service.nameOverride }}
-  annotations:
-    checksum/{{ template "gitea.fullname" . }}-config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
 spec:
   replicas: 1
   strategy:
@@ -23,6 +21,7 @@ spec:
         app: {{ template "gitea.fullname" . }}
         release: {{ .Release.Name }}
       annotations:
+        checksum/{{ template "gitea.fullname" . }}-config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       {{- with .Values.podAnnotations }}
       {{- toYaml . | nindent 8 }}
       {{- end }}
