@@ -13,6 +13,9 @@ data:
     APP_NAME = {{ .Values.gitea.appName }}
     RUN_MODE = {{ .Values.gitea.runMode }}
 
+    [repository]
+    ROOT = /data/git/gitea-repositories
+
     [repository.upload]
     ENABLED = {{ .Values.gitea.repositoryUploadEnabled }}
     ALLOWED_TYPES = {{ .Values.gitea.repositoryUploadAllowedTypes }}
@@ -119,7 +122,7 @@ data:
     REPOSITORY_AVATAR_UPLOAD_PATH = /data/repo-avatars
 
     [queue]
-    DATADIR = /data/queues/
+    DATADIR = /data/queues
 
     [indexer]
     ISSUE_INDEXER_PATH = /data/indexers/issues.bleve
