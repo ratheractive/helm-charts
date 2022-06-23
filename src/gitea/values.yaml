@@ -8,7 +8,7 @@
 replicaCount: 1
 
 image: gitea/gitea
-imageTag: 1.15.7
+imageTag: 1.16.8
 imagePullPolicy: IfNotPresent
 
 service:
@@ -195,6 +195,13 @@ gitea:
   ## Number of history information in each page
   ##
   webhookPagingNum: 10
+
+  ## Webhook can only call allowed hosts for security reasons. Comma separated list, eg: external, 192.168.1.0/24, *.mydomain.com
+  ## Built-in: loopback (for localhost), private (for LAN/intranet), external (for public hosts on internet), * (for all hosts)
+  ## CIDR list: 1.2.3.0/8, 2001:db8::/32
+  ## Wildcard hosts: *.mydomain.com, 192.168.100.*
+  ##
+  webhookAllowedHosts: ["*"]
 
   ## Can be "console" and "file", default is "console"
   ## Use comma to separate multiple modes, e.g. "console, file"

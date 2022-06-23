@@ -80,6 +80,7 @@ data:
     DELIVER_TIMEOUT = {{ .Values.gitea.webhookDeliverTimeout }}
     SKIP_TLS_VERIFY = {{ .Values.gitea.webhookSkipTlsVerify }}
     PAGING_NUM = {{ .Values.gitea.webhookPagingNum }}
+    ALLOWED_HOST_LIST = {{ template "gitea.webhookAllowedHosts" . }}
 
     [admin]
     DISABLE_REGULAR_ORG_CREATION = {{ .Values.gitea.adminDisableRegularOrgCreation }}
