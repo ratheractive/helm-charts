@@ -83,7 +83,7 @@ affinity: {}
 
 mailSender:
   smtpHost: 
-  smtpPort: 25
+  smtpPort: "25"
   smtpUser: 
   smtpPassword:
   toEmail: 
