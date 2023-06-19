@@ -83,10 +83,11 @@ affinity: {}
 
 mailSender:
   smtpHost: 
-  smtpPort: "25"
+  smtpPort: "465"
   smtpUser: 
   smtpPassword:
   toEmail: 
   fromEmail: 
   confirmationSubject: "Your email regarding \"{subject}\" was received"
   fromToSmtpSubject: "[From Web Form] \"{subject}\""
+  corsOrigins: "*"

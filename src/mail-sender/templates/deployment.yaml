@@ -62,6 +62,8 @@ spec:
             value: {{ quote .Values.mailSender.confirmationSubject }}
           - name: FORM_TO_SMTP_SUBJECT
             value: {{ quote .Values.mailSender.fromToSmtpSubject }}
+          - name: CORS_ORIGINS
+            value: {{ quote .Values.mailSender.corsOrigins }}
           ports:
             - name: http
               containerPort: 3000
