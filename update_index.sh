@@ -11,6 +11,6 @@ if [[ ! -e $1 ]];then
 fi
 
 helm package $1
-helm repo index --url https://slavoo.github.io/helm-charts/ .
+helm repo index --url https://ratheractive.github.io/helm-charts/ .
 
 echo all done. You can now commit and push.
