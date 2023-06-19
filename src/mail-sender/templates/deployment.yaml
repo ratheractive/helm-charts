@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mailSender.fullname" . }}
+  labels:
+    {{- include "mailSender.labels" . | nindent 4 }}
+  annotations:
+    checksum/secret-1: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "mailSender.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "mailSender.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "mailSender.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: NODE_ENV
+            value: production
+          - name: PORT
+            value: 80
+          - name: SMTP_HOST
+            value: {{ .Values.mailSender.smtpHost }}
+          - name: SMTP_PORT
+            value: {{ .Values.mailSender.smtpPort }}
+          - name: SMTP_USER
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-creds
+                key: user 
+          - name: SMTP_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}-creds
+                key: password
+          - name: TO_EMAIL
+            value: {{ .Values.mailSender.toEmail }}
+          - name: CONFIRMATION_SUBJECT
+            value: {{ quote .Values.mailSender.confirmationSubject }}
+          - name: FORM_TO_SMTP_SUBJECT
+            value: {{ quote .Values.mailSender.fromToSmtpSubject }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
