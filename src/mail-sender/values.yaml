@@ -87,5 +87,6 @@ mailSender:
   smtpUser: 
   smtpPassword:
   toEmail: 
+  fromEmail: 
   confirmationSubject: "Your email regarding \"{subject}\" was received"
   fromToSmtpSubject: "[From Web Form] \"{subject}\""

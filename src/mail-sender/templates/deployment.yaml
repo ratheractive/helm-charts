@@ -56,6 +56,8 @@ spec:
                 key: password
           - name: TO_EMAIL
             value: {{ .Values.mailSender.toEmail }}
+          - name: FROM_EMAIL
+            value: {{ .Values.mailSender.fromEmail }}
           - name: CONFIRMATION_SUBJECT
             value: {{ quote .Values.mailSender.confirmationSubject }}
           - name: FORM_TO_SMTP_SUBJECT
