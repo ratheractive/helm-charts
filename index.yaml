@@ -3,7 +3,7 @@ entries:
   experiment-console-web-ui:
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2023-06-21T15:28:05.022985+01:00"
+    created: "2023-06-21T16:46:33.271328+01:00"
     description: A Helm chart for Kubernetes
     digest: 7e1cecb911f09d7ef643268827f86aac43eaaeb92bb0da73d605dc2504b7750f
     name: experiment-console-web-ui
@@ -13,7 +13,7 @@ entries:
     version: 0.0.2
   gitea:
   - apiVersion: v1
-    created: "2023-06-21T15:28:05.025354+01:00"
+    created: "2023-06-21T16:46:33.272431+01:00"
     description: 'Gitea: Go Git Service'
     digest: 1d16f175e0ed2a4f08da64d6992b748ade1ff632a43a2a46d898c1414d256911
     home: https://gitea.io/
@@ -29,7 +29,7 @@ entries:
     - https://ratheractive.github.io/helm-charts/gitea-1.16.8.tgz
     version: 1.16.8
   - apiVersion: v1
-    created: "2023-06-21T15:28:05.024749+01:00"
+    created: "2023-06-21T16:46:33.271911+01:00"
     description: 'Gitea: Go Git Service'
     digest: 08785aa6e67935031ea79ab5f16a0166d0ab939bfbeb8c8e2dc979ebd69383b1
     home: https://gitea.io/
@@ -46,7 +46,7 @@ entries:
     version: 1.15.7
   gitea-drone:
   - apiVersion: v1
-    created: "2023-06-21T15:28:05.025702+01:00"
+    created: "2023-06-21T16:46:33.272766+01:00"
     description: Gitea-Drone integration
     digest: a36092faf85d736cf942684b27fb1b57530451555917abad082dd51131012529
     name: gitea-drone
@@ -55,8 +55,18 @@ entries:
     version: 0.1.5
   mail-sender:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2023-06-21T16:46:33.275755+01:00"
+    description: A Helm chart for Kubernetes
+    digest: d77ff25977dd44860a243af15c17f84340e4ba5cdf7887017694f0b0296ce4ec
+    name: mail-sender
+    type: application
+    urls:
+    - https://ratheractive.github.io/helm-charts/mail-sender-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-06-21T15:28:05.028456+01:00"
+    created: "2023-06-21T16:46:33.275495+01:00"
     description: A Helm chart for Kubernetes
     digest: 28046c7a66792039c443bb30d0d749679142330507b95b072fa0a1f2196ead5c
     name: mail-sender
@@ -66,7 +76,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.0.0-alpha8
-    created: "2023-06-21T15:28:05.028177+01:00"
+    created: "2023-06-21T16:46:33.275086+01:00"
     description: A Helm chart for Kubernetes
     digest: 6751417751c4309b34096777bad2b7c4e96368cc9a4dc7a3f828147f0e2d136e
     name: mail-sender
@@ -76,7 +86,7 @@ entries:
     version: 1.0.0-alpha8
   - apiVersion: v2
     appVersion: 1.0.0-alpha7
-    created: "2023-06-21T15:28:05.027164+01:00"
+    created: "2023-06-21T16:46:33.274269+01:00"
     description: A Helm chart for Kubernetes
     digest: 813f70269976c36b6bb5f1e0d8ca829ba94528479df482fe6419eafa09ef382c
     name: mail-sender
@@ -86,7 +96,7 @@ entries:
     version: 1.0.0-alpha7.b1
   - apiVersion: v2
     appVersion: 1.0.0-alpha6
-    created: "2023-06-21T15:28:05.027662+01:00"
+    created: "2023-06-21T16:46:33.274656+01:00"
     description: A Helm chart for Kubernetes
     digest: 18d9f2f3f1eb5c814930bc8ccd7654874a35c4e7f44c08d18e325a84230a4df1
     name: mail-sender
@@ -96,7 +106,7 @@ entries:
     version: 1.0.0-alpha7
   - apiVersion: v2
     appVersion: 1.0.0-alpha6
-    created: "2023-06-21T15:28:05.026703+01:00"
+    created: "2023-06-21T16:46:33.273759+01:00"
     description: A Helm chart for Kubernetes
     digest: d4c789d840fb27c04be6f574d7aa6303433210ba64a74021e104d6bf3dfd7abd
     name: mail-sender
@@ -106,7 +116,7 @@ entries:
     version: 1.0.0-alpha6
   - apiVersion: v2
     appVersion: 1.0.0-alpha10
-    created: "2023-06-21T15:28:05.026201+01:00"
+    created: "2023-06-21T16:46:33.273223+01:00"
     description: A Helm chart for Kubernetes
     digest: c98bd1fc6f35e57d181bc35027bb7e3d057a71aa52924070eea3964331fd1caf
     name: mail-sender
@@ -117,7 +127,7 @@ entries:
   nginx:
   - apiVersion: v1
     appVersion: 1.18.0
-    created: "2023-06-21T15:28:05.029062+01:00"
+    created: "2023-06-21T16:46:33.276339+01:00"
     description: Chart for the nginx server
     digest: 6d55c4d75df3b405339ca1c621a55682eeaff77278af37ab6b694da99359e571
     home: http://www.nginx.org
@@ -140,7 +150,7 @@ entries:
   nginx-ingress-controller:
   - apiVersion: v1
     appVersion: 0.30.0
-    created: "2023-06-21T15:28:05.030325+01:00"
+    created: "2023-06-21T16:46:33.277487+01:00"
     description: Chart for the nginx Ingress controller
     digest: 5630988e926e6f4af5bf9e311917ff6100520a4606ac4c34ea5189e0c6c883bb
     home: https://github.com/kubernetes/ingress-nginx
@@ -163,7 +173,7 @@ entries:
     version: 5.0.10
   - apiVersion: v1
     appVersion: 0.26.1
-    created: "2023-06-21T15:28:05.031561+01:00"
+    created: "2023-06-21T16:46:33.278653+01:00"
     description: Chart for the nginx Ingress controller
     digest: 4d0f2beb7ef379cf24d9dae331e3b1976691390867b450a41380f7746c366f7b
     home: https://github.com/kubernetes/ingress-nginx
@@ -186,7 +196,7 @@ entries:
     version: 5.0.9
   openldap:
   - apiVersion: v1
-    created: "2023-06-21T15:28:05.032056+01:00"
+    created: "2023-06-21T16:46:33.279127+01:00"
     description: Community developed LDAP software
     digest: c65965421877177d4ba794fe9a14db75df145c1cf7439a457fa3bde4cc702704
     home: https://www.openldap.org
@@ -206,7 +216,7 @@ entries:
   parse:
   - apiVersion: v1
     appVersion: 3.10.0
-    created: "2023-06-21T15:28:05.033316+01:00"
+    created: "2023-06-21T16:46:33.281707+01:00"
     description: Parse is a platform that enables users to add a scalable and powerful
       backend to launch a full-featured app for iOS, Android, JavaScript, Windows,
       Unity, and more.
@@ -233,7 +243,7 @@ entries:
   parse-dashboard:
   - apiVersion: v2
     appVersion: 2.0.5
-    created: "2023-06-21T15:28:05.033875+01:00"
+    created: "2023-06-21T16:46:33.282124+01:00"
     description: chart for the parse-dashboard
     digest: 90c5c81e4d4e1f7804e345e517763eaa928e639e026ebbe007eb78089aa6f258
     name: parse-dashboard
@@ -244,7 +254,7 @@ entries:
   parse-server:
   - apiVersion: v2
     appVersion: 3.10.0
-    created: "2023-06-21T15:28:05.034339+01:00"
+    created: "2023-06-21T16:46:33.282592+01:00"
     description: chart for the parse-server
     digest: 2490c3d8f1cd586cb1e05c672b5c9fa3b4260e8e53e375b39e443ec264fbae6d
     name: parse-server
@@ -255,7 +265,7 @@ entries:
   posa-api:
   - apiVersion: v2
     appVersion: 0.0.4
-    created: "2023-06-21T15:28:05.034623+01:00"
+    created: "2023-06-21T16:46:33.28286+01:00"
     description: A Helm chart for Kubernetes
     digest: 0e5a9453ff47b9ff7ff76bff8158d07cd9e4ff0606a92b0c8fa8b9cd95798930
     name: posa-api
@@ -266,7 +276,7 @@ entries:
   postfix-relay:
   - apiVersion: v2
     appVersion: 3.5.9
-    created: "2023-06-21T15:28:05.034957+01:00"
+    created: "2023-06-21T16:46:33.283167+01:00"
     description: A Very simple postfix based smtp relay
     digest: aa7cebbed92bebeca94ab6adc797b5e84ea195cd6ee0ba69cad1f7e6489c99e5
     name: postfix-relay
@@ -274,4 +284,4 @@ entries:
     urls:
     - https://ratheractive.github.io/helm-charts/postfix-relay-3.5.9.tgz
     version: 3.5.9
-generated: "2023-06-21T15:28:05.021935+01:00"
+generated: "2023-06-21T16:46:33.270719+01:00"
