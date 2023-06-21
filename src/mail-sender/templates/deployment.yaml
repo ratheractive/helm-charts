@@ -6,6 +6,9 @@ metadata:
     {{- include "mailSender.labels" . | nindent 4 }}
   annotations:
     checksum/secret-1: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+{{- if or .Values.mailSender.confirmationTemplate .Values.mailSender.forwardTemplate }}
+    checksum/configmap-1: {{ include (print $.Template.BasePath "/configmap-templates.yaml") . | sha256sum }}
+{{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -41,9 +44,9 @@ spec:
           - name: PORT
             value: "3000"
           - name: SMTP_HOST
-            value: {{ .Values.mailSender.smtpHost }}
+            value: {{ .Values.mailSender.smtp.host }}
           - name: SMTP_PORT
-            value: {{ quote .Values.mailSender.smtpPort }}
+            value: {{ quote .Values.mailSender.smtp.port }}
           - name: SMTP_USER
             valueFrom:
               secretKeyRef:
@@ -60,8 +63,16 @@ spec:
             value: {{ .Values.mailSender.fromEmail }}
           - name: CONFIRMATION_SUBJECT
             value: {{ quote .Values.mailSender.confirmationSubject }}
+          {{- if .Values.mailSender.confirmationTemplate }}
+          - name: CONFIRMATION_TEMPLATE
+            value: /templates/confirmation.hbs
+          {{- end }}
           - name: FORM_TO_SMTP_SUBJECT
-            value: {{ quote .Values.mailSender.fromToSmtpSubject }}
+            value: {{ quote .Values.mailSender.forwardSubject }}
+          {{- if .Values.mailSender.forwardTemplate }}
+          - name: FORM_TO_SMTP_TEMPLATE
+            value: /templates/forward.hbs
+          {{- end }}
           - name: CORS_ORIGINS
             value: {{ quote .Values.mailSender.corsOrigins }}
           ports:
@@ -78,6 +89,16 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      {{- if or .Values.mailSender.confirmationTemplate .Values.mailSender.forwardTemplate }}
+          volumeMounts:
+            - name: email-templates
+              mountPath: /templates
+              readOnly: true
+      volumes:
+        - name: email-templates
+          configMap:
+            name: {{ .Release.Name }}-templates
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

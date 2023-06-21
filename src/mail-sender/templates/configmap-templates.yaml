@@ -1,0 +1,17 @@
+{{- if or .Values.mailSender.confirmationTemplate .Values.mailSender.forwardTemplate }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-templates
+  labels:
+    {{- include "mailSender.labels" . | nindent 4 }}
+data:
+  {{- if .Values.mailSender.confirmationTemplate }}
+  confirmation.hbs: |
+  {{- .Values.mailSender.confirmationTemplate | nindent 4 }}
+  {{- end }}
+  {{- if .Values.mailSender.forwardTemplate }}
+  forward.hbs: |
+  {{- .Values.mailSender.forwardTemplate | nindent 4 }}
+  {{- end }}
+{{- end }}

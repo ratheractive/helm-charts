@@ -82,12 +82,27 @@ tolerations: []
 affinity: {}
 
 mailSender:
-  smtpHost: 
-  smtpPort: "465"
-  smtpUser: 
-  smtpPassword:
+  smtp:
+    host:
+    port: 465
+    user:
+    password:
   toEmail: 
   fromEmail: 
   confirmationSubject: "Your email regarding \"{subject}\" was received"
-  fromToSmtpSubject: "[From Web Form] \"{subject}\""
+  confirmationTemplate:
+  # this is the hbs template used to generate confirmation email content.
+  # It supports the following values:
+  # * name - name of the sender
+  # * from - email of the sender
+  # * subject - subject given by the sender
+  # * message - message from the sender
+  forwardSubject: "[From Web Form] \"{subject}\""
+  forwardTemplate: 
+  # this is the hbs template used to generate email content sent to 'toEmail':
+  # It supports the following values:
+  # * name - name of the sender
+  # * from - email of the sender
+  # * subject - subject given by the sender
+  # * message - message from the sender
   corsOrigins: "*"
